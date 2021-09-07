@@ -14,6 +14,7 @@ export class OfficeViewComponent implements OnInit {
   office?: any;
   officeInView: {} = {};
   popUp?: boolean = false;
+  selectedMember?: {};
 
   constructor(
     private officeService: OfficeService,
@@ -42,6 +43,12 @@ export class OfficeViewComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  onSelect(member: []): void{
+    console.log("selected member: ", member)
+    this.selectedMember = member;
+    this.showPop(true);
   }
 
   showPop(popUp: boolean): void {
