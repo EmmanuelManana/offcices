@@ -1,0 +1,49 @@
+<body *ngIf="officeInView">
+  <header>
+    <div class="heading">
+      <p (click)="goBack()">Back</p>
+      <h1>
+        <span>{{ officeInView.name }}</span>
+      </h1>
+    </div>
+
+    <div class="office-details">
+      <p>address: {{ officeInView?.location }}</p>
+      <p>Email: {{ officeInView?.email }}</p>
+      <p>Office : {{ officeInView?.tellNumber }}</p>
+      <p>Max Capacity: {{ officeInView?.maxNumberOfOccupants }}</p>
+    </div>
+  </header>
+
+  <div class="search">  
+    <input type="text" placeholder="  search..." />
+  </div>
+
+  <div class="staff">
+    <h4>
+      <span *ngIf="officeInView.staffMembers">Staff Members </span>{{officeInView.staffMembers.length}} / {{ officeInView?.maxNumberOfOccupants }}
+    </h4>
+    <button>Add Staff</button>
+  </div>
+
+  <div class="staffmembers" *ngIf="officeInView.staffMembers">
+    <div *ngIf="officeInView.staffMembers">
+      <div class="staff-cards" *ngFor="let member of officeInView.staffMembers">
+        <div class="staff-card-right">
+          <img
+            src="https://cdn2.iconfinder.com/data/icons/colored-simple-circle-volume-01/128/circle-flat-general-51851bd79-512.png"
+          />
+          <p>{{member.name}} {{member.lastname}}</p>
+        </div>
+        <button (click)="showPop(true)">...</button>
+        <!-- emit -->
+        <app-edit-delete-pop-up 
+        *ngIf="popUp == true"
+        (closePopUEmitter)="showPop($event)"
+        >
+        </app-edit-delete-pop-up>
+      </div>
+    </div>
+  </div>
+  
+</body>

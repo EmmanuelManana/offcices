@@ -1,0 +1,152 @@
+body {
+  width: 50vw;
+  min-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Rubik, sans-serif;
+}
+
+.header {
+  min-width: 100%;
+  min-height: 10vh;
+  width: auto;
+  height: auto;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 77, 121, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  margin-top: -20px;
+  /* border-radius: 0px 0px 50px 50px; */
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  box-shadow: 0px 5px 5px 0px rgba(144, 142, 142, 0.383);
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+.header h1 {
+  color: white;
+  font-style: normal;
+  padding: 10px;
+  font-style: normal;
+}
+
+.header button {
+  margin: 20px;
+  padding: 10px 35px 10px 35px;
+  border-radius: 40px;
+  border: none;
+}
+
+.offices {
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.office-card {
+  display: flex;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15vh;
+  border-radius: 10px;
+  box-shadow: 1px 4px 10px 1px rgba(144, 142, 142, 0.383);
+  transition: transform 200ms ease-in-out 25ms;
+}
+
+.office-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0.5px 0px 15px 2px rgba(47, 107, 119, 0.548);
+}
+
+.badge {
+  width: 20%;
+  height: 100%;
+  border: none;
+  object-fit: contain;
+  background: rgb(2, 0, 36);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 90, 121, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 10px 0px 0px 10px;
+  cursor: pointer;
+}
+
+.badge img {
+  width: 60%;
+  height: 60%;
+  padding: 10px;
+  margin-left: 15px;
+  object-fit: contain;
+}
+
+.badge h2 {
+  color: white;
+  margin-top: -5px;
+  margin-left: 40px;
+}
+
+.office-details {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 90%;
+  margin-top: -10px;
+  margin-left: 15px;
+}
+
+.office-details-action-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.office-details-action-menu button {
+  border: none;
+  background: white;
+  font-size: 2rem;
+  color: grey;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.office-details-info h2 {
+  color: grey;
+  margin-top: -10px;
+}
+
+.office-details-info h3 {
+  color: #4fc0b4;
+  margin-top: -10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#tell-number {
+  padding-right: 20px;
+  align-items: center;
+}
+
+#tell-number img {
+  width: 20px;
+  object-fit: contain;
+  margin-bottom: -2px;
+}
+
+.office-details-action-menu h1:hover {
+  cursor: pointer;
+  color: #4fc0b4;
+}
+
+.position{
+  left: 500%;
+}

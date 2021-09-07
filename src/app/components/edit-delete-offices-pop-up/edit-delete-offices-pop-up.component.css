@@ -1,0 +1,40 @@
+
+
+.edit-delete-pop-up{
+    width: 300px;
+    height: 140px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 4px 20px 1px rgb(144 142 142 / 38%);
+    position: relative;
+    margin-left: 50%;
+    margin-top: -90px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+}
+
+/* TODO add media queries to edit-delete-pop-up for mobile view, */
+.edit-delete-pop-up h2{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.edit-delete-pop-up h2 > img{
+    width: 25px;
+    height: auto;
+   
+    object-fit: contain;
+}
+
+.edit-delete-pop-up h2:first-child:hover{
+    color: #4fc0b4;;
+}
+
+.edit-delete-pop-up h2:last-child:hover{
+    color: red;
+}
