@@ -14,17 +14,15 @@ export class OfficesComponent implements OnInit {
   selectedOffice?: Office;
   closePopUp: boolean = false;
 
+  // this is for testing purposes
+  PopUp: boolean = false; 
+
   offices?: Observable<any[]>;
 
   constructor(private officeService: OfficeService) {}
 
   ngOnInit(): void {
     this.getOffices();
-  }
-
-  onSelect(selectedOffice: Office): void {
-    this.selectedOffice = selectedOffice;
-    this.setActionMenu();
   }
 
   getOffices(): void {
@@ -34,30 +32,30 @@ export class OfficesComponent implements OnInit {
     //   .subscribe((offices) => (this.offices = offices));
   }
 
-  setActionMenu(): void {
-    if (this.actionMenu === false) {
-      this.actionMenu = true;
-    } else {
-      this.actionMenu = false;
-    }
-  }
-
-  
-  // setActionMenu(closePopUp: boolean): void {
-  //   this.actionMenu = closePopUp;
-  //  }
-
   addOffice() {
-    if ( this.closePopUp === false) {
+    if (this.closePopUp === false) {
       this.closePopUp = true;
     } else {
       this.closePopUp = false;
     }
   }
 
+  setActionMenu(popUp: boolean): void {
+    this.actionMenu = popUp;
+  }
+
+  onSelect(selectedOffice: Office): void {
+    this.selectedOffice = selectedOffice;
+    this.PopUp = true;
+    this.setActionMenu(true);
+  }
 
   // closePopUp prop as an emmitter from child
-  closeOffice(closePopUp: boolean){
+  closeOffice(closePopUp: boolean) {
     this.closePopUp = closePopUp;
+  }
+
+  boxPopUp(bool: boolean){
+    this.PopUp = bool;
   }
 }

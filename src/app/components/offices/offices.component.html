@@ -46,7 +46,10 @@
       </div>
     </div>
 
-    <app-edit-delete-offices-pop-up *ngIf="office == selectedOffice">
+    <app-edit-delete-offices-pop-up 
+    *ngIf="office == selectedOffice && PopUp == true"
+    (closePopUEmitter)="boxPopUp($event)"
+    >
     </app-edit-delete-offices-pop-up>
   </div>
 
