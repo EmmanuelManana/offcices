@@ -13,6 +13,8 @@ export class EditDeleteOfficesPopUpComponent implements OnInit {
   @Input() officeName?: string = ""
 
   removeOfficePopUp?: boolean = false;
+  editOfficePopUp?: boolean = false;
+  popUp?: boolean = false;
 
   constructor() { }
 
@@ -27,11 +29,14 @@ export class EditDeleteOfficesPopUpComponent implements OnInit {
   }
 
   editOffice(): void{
-    this.removeOfficePopUp = true;
+    this.editOfficePopUp = true;
+    // this.removeOfficePopUp = true;
+    this.popUp = true;
   }
 
   removeOffice(id: string): void{
     this.removeOfficePopUp = true;
+    this.popUp = true;
   }
 
 

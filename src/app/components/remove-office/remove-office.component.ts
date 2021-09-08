@@ -17,13 +17,10 @@ export class RemoveOfficeComponent implements OnInit {
   constructor(private officeService: OfficeService) { }
 
   ngOnInit(): void {
-    console.log("removeOfficePopUp => ", this.removeOfficePopUpChild)
-    console.log("Id from offices: ", this.id)
     this.officeId = this.id;
   }
 
   removeOffice(): void {
-    console.log("trying to delete", this.officeId)
     this.officeService.removeOffice(this.id);
   }
 

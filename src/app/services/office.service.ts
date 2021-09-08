@@ -21,11 +21,10 @@ export class OfficeService {
   officeInView?: {};
 
   constructor(public firestore: AngularFirestore) {
-    // this.offices = firestore.collection('offices').valueChanges();
-
+    
     this.officeCollection = this.firestore.collection<Office>('offices');
 
-    // this.offices$ =
+    
     this.offices = this.officeCollection.snapshotChanges().pipe(
       map((actions) =>
         actions.map((a) => {
@@ -62,6 +61,25 @@ export class OfficeService {
           }
         });
       });
+  }
+
+  updateOffice(office: Office, id: any){
+    let curDoc: any;
+    this.firestore
+      .collection('offices')
+      .get()
+      .toPromise()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          curDoc = doc.data();
+          if (doc.data()) {
+            if (curDoc.id == id) {
+              console.log('doc found');
+              doc.ref.update(office)
+            }
+          }
+        });
+      })
   }
 
   // getOfficeByID(id: string) {

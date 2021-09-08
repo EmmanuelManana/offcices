@@ -24,6 +24,7 @@ import { AddOfficeComponent } from './components/add-office/add-office.component
 import { OfficeViewComponent } from './components/office-view/office-view.component';
 import { EditDeleteOfficesPopUpComponent } from './components/edit-delete-offices-pop-up/edit-delete-offices-pop-up.component';
 import { RemoveOfficeComponent } from './components/remove-office/remove-office.component';
+import { UpdateOfficeComponent } from './components/update-office/update-office.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RemoveOfficeComponent } from './components/remove-office/remove-office.
     AddOfficeComponent,
     OfficeViewComponent,
     EditDeleteOfficesPopUpComponent,
-    RemoveOfficeComponent
+    RemoveOfficeComponent,
+    UpdateOfficeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<div class="add-office-container">
+    <div class="add-office">
+      <!-- <h1>add office</h1> -->
+      <h1>Update Office <span id="close" (click)="closePopUp()">X</span></h1>
+      <input placeholder="Office Name" [(ngModel)]="name" />
+      <input placeholder="Email Address" [(ngModel)]="email" />
+      <input placeholder="Office tell" [(ngModel)]="officeTell" />
+      <input placeholder="Address" [(ngModel)]="address" />
+      <input
+        placeholder="Max number of occupants"
+        [(ngModel)]="maxNumberOfOccupants"
+      />
+      <select>
+        <option>Office color</option>
+        <option>yellow</option>
+        <option>pink</option>
+        <option>blue</option>
+      </select>
+      <button (click)="updateOffice()">Save Office</button>
+    </div>
+  </div>

@@ -1,5 +1,5 @@
 <!-- this will be a child component -->
-<div class="edit-delete-pop-up"  *ngIf="removeOfficePopUp == false">
+<div class="edit-delete-pop-up" *ngIf="popUp == false">
   <h2>
     <span (click)="editOffice()">Edit</span
     ><img
@@ -16,8 +16,15 @@
 
 <app-remove-office
   *ngIf="removeOfficePopUp == true"
-  [removeOfficePopUpChild] = "removeOfficePopUp"
-  [id] = "id"
+  [removeOfficePopUpChild]="removeOfficePopUp"
+  [id]="id"
   [officeName]="officeName"
-> 
+>
 </app-remove-office>
+
+<app-update-office
+  *ngIf="editOfficePopUp == true"
+  [removeOfficePopUpChild]="editOfficePopUp"
+  [id]="id"
+>
+</app-update-office>
