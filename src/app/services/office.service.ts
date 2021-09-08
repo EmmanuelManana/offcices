@@ -38,10 +38,6 @@ export class OfficeService {
   }
 
   getOffices(): Observable<Office[]> {
-    // this.offices = this.firestore.collection('offices').valueChanges();
-    // // const offices = of(OFFICES)
-    // return this.offices;
-    // console.log("ge offices ===>", this.offices.subscribe( a => console.log(a)))
     return this.offices;
   }
 
@@ -49,35 +45,54 @@ export class OfficeService {
     return this.firestore.collection('offices').add(office);
   }
 
-  getOfficeByID(id: string) {
-    // console.log(
-    //   'this doc: ',
-    //   this.firestore.collection('offices', (ref) =>
-    //     ref.where('id', '==', 'Emmanue')
-    //   ).valueChanges({idField: 'Emmanue'}).subscribe( dov => console.log("dov dov dov:", dov))
-    // );
-
-    // this.firestore.collection('offices', (ref) =>
-    //   ref.where('id', '==', 'Emmanue')
-    // );
-
-    // this.offices.subscribe( offices => {
-    //   offices.map( office => {
-    //     if (office.id == id){
-    //       // built an office here
-    //       this.officeInView = office;
-    //       return office;
-    //     }
-    //   })
-    // })
-    //   let obj = {};
-    //  await this.offices.forEach(office => {
-    //    let test = office.filter( office => {
-    //       return office.id == id;
-    //     })
-    //     obj = test[0]
-    //     console.groupCollapsed("test: ", test[0])
-    //     return test[0]
-    //   })
+  removeOffice(id: any): void {
+    let curDoc: any;
+    this.firestore
+      .collection('offices')
+      .get()
+      .toPromise()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          curDoc = doc.data();
+          if (doc.data()) {
+            if (curDoc.id == id) {
+              console.log('doc found');
+              doc.ref.delete();
+            }
+          }
+        });
+      });
   }
+
+  // getOfficeByID(id: string) {
+  // console.log(
+  //   'this doc: ',
+  //   this.firestore.collection('offices', (ref) =>
+  //     ref.where('id', '==', 'Emmanue')
+  //   ).valueChanges({idField: 'Emmanue'}).subscribe( dov => console.log("dov dov dov:", dov))
+  // );
+
+  // this.firestore.collection('offices', (ref) =>
+  //   ref.where('id', '==', 'Emmanue')
+  // );
+
+  // this.offices.subscribe( offices => {
+  //   offices.map( office => {
+  //     if (office.id == id){
+  //       // built an office here
+  //       this.officeInView = office;
+  //       return office;
+  //     }
+  //   })
+  // })
+  //   let obj = {};
+  //  await this.offices.forEach(office => {
+  //    let test = office.filter( office => {
+  //       return office.id == id;
+  //     })
+  //     obj = test[0]
+  //     console.groupCollapsed("test: ", test[0])
+  //     return test[0]
+  //   })
+  // }
 }

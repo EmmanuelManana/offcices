@@ -1,15 +1,23 @@
 <!-- this will be a child component -->
-<div class="edit-delete-pop-up">
+<div class="edit-delete-pop-up"  *ngIf="removeOfficePopUp == false">
   <h2>
-    <span (click)="closePopUp()">Edit</span
+    <span (click)="editOffice()">Edit</span
     ><img
       src="data:image/png;base64,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"
     />
   </h2>
-  <h2>
-    <span (click)="closePopUp()">Remove</span
+  <h2 *ngIf="id">
+    <span (click)="removeOffice(id)">Remove</span
     ><img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMPIQ0DrADt01zr72FOIcwuEJaXznm0r9IIDxQu57ofXe21pyvW5XIuSgPLfpiNbYz7Y&usqp=CAU"
     />
   </h2>
 </div>
+
+<app-remove-office
+  *ngIf="removeOfficePopUp == true"
+  [removeOfficePopUpChild] = "removeOfficePopUp"
+  [id] = "id"
+  [officeName]="officeName"
+> 
+</app-remove-office>

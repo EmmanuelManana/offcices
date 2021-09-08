@@ -46,12 +46,16 @@
       </div>
     </div>
 
-    <app-edit-delete-offices-pop-up 
-    *ngIf="office == selectedOffice && PopUp == true"
-    (closePopUEmitter)="boxPopUp($event)"
+    <app-edit-delete-offices-pop-up
+      *ngIf="office == selectedOffice && PopUp == true"
+      (closePopUEmitter)="boxPopUp($event)"
+      [id]="selectedOffice.id"
+      [officeName] = "selectedOffice.name"
     >
     </app-edit-delete-offices-pop-up>
+ 
   </div>
+ 
 
   <!-- Test -->
   <!-- <div *ngIf="addNewOfficeParentState == true">

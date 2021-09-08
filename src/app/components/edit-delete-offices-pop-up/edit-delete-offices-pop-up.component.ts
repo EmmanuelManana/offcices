@@ -1,3 +1,4 @@
+import { identifierName } from '@angular/compiler';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,13 +9,30 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class EditDeleteOfficesPopUpComponent implements OnInit {
 
   @Output() closePopUEmitter = new EventEmitter<boolean>();
+  @Input() id?: string = '';
+  @Input() officeName?: string = ""
+
+  removeOfficePopUp?: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log("id for office to delete: ", this.id)
+    console.log("removeOfficePopUp: ", this.removeOfficePopUp)
   }
 
-  closePopUp(): void{
+  closePop(){
     console.log("Emmit")
-    this.closePopUEmitter.emit(false)
+    // this.closePopUEmitter.emit(false)
   }
+
+  editOffice(): void{
+    this.removeOfficePopUp = true;
+  }
+
+  removeOffice(id: string): void{
+    this.removeOfficePopUp = true;
+  }
+
+
 }

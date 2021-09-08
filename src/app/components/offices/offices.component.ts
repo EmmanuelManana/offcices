@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Office } from 'src/app/interfaces/office-details/office-details';
 import { OfficeService } from 'src/app/services/office.service';
 import { Observable } from 'rxjs';
@@ -13,9 +13,10 @@ export class OfficesComponent implements OnInit {
   actionMenu: boolean = false;
   selectedOffice?: Office;
   closePopUp: boolean = false;
-
   // this is for testing purposes
-  PopUp: boolean = false; 
+  PopUp: boolean = false;
+
+  @Input() editRemoveOfficePopUp?: boolean = false;
 
   offices?: Observable<any[]>;
 
@@ -42,6 +43,7 @@ export class OfficesComponent implements OnInit {
 
   setActionMenu(popUp: boolean): void {
     this.actionMenu = popUp;
+    // this.editRemoveOfficePopUp = popUp;
   }
 
   onSelect(selectedOffice: Office): void {
@@ -55,7 +57,7 @@ export class OfficesComponent implements OnInit {
     this.closePopUp = closePopUp;
   }
 
-  boxPopUp(bool: boolean){
+  boxPopUp(bool: boolean) {
     this.PopUp = bool;
   }
 }
