@@ -1,4 +1,4 @@
-interface StaffMember{
+export interface StaffMember{
     name: string,
     lastname: string
 }

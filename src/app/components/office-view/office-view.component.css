@@ -27,6 +27,11 @@ header {
   display: flex;
   align-items: center;
   gap: 20px;
+  /* justify-content: center; */
+}
+
+#back{
+  margin-top: 5px;
 }
 
 .office-details > p {

@@ -1,7 +1,7 @@
 <body *ngIf="officeInView">
   <header>
     <div class="heading">
-      <p (click)="goBack()"> {{"<== Back"}}</p>
+      <p (click)="goBack()"> <img id="back" src="../../../assets/images/back2.png"/></p>
       <h1>
         <span>{{ officeInView.name }}</span>
       </h1>
@@ -19,13 +19,13 @@
     <input type="text" placeholder="  search..." />
   </div>
 
-  <div class="staff">
+  <div class="staff" *ngIf="officeInView">
     <h4>
-      <span *ngIf="officeInView.staffMembers">Staff Members </span
+      <span *ngIf="officeInView.staffMembers.length">Staff Members </span
       >{{ officeInView.staffMembers.length }} /
       {{ officeInView?.maxNumberOfOccupants }}
     </h4>
-    <button>Add Staff</button>
+    <button (click)="addStaff(true)">Add Staff</button>
   </div>
 
   <div class="staffmembers" *ngIf="officeInView.staffMembers">
@@ -42,9 +42,21 @@
         <app-edit-delete-pop-up
           *ngIf="popUp == true && member == selectedMember"
           (closePopUEmitter)="showPop($event)"
+          [selectedMember]="selectedMember"
         >
         </app-edit-delete-pop-up>
       </div>
     </div>
   </div>
 </body>
+
+<app-add-staff
+*ngIf="popUp == true && addStaffPopUp == true"
+  (addStaffPopUp)="addStaff($event)"
+></app-add-staff>
+
+<!-- *ngIf="addStaffPopUp == true" -->
+<!-- used for test -->
+<!-- (closePopUEmitter)="showPop($event)" -->
+
+<!-- (editStuffPopUp)="showPop($event)" -->

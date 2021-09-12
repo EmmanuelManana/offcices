@@ -25,6 +25,10 @@ import { OfficeViewComponent } from './components/office-view/office-view.compon
 import { EditDeleteOfficesPopUpComponent } from './components/edit-delete-offices-pop-up/edit-delete-offices-pop-up.component';
 import { RemoveOfficeComponent } from './components/remove-office/remove-office.component';
 import { UpdateOfficeComponent } from './components/update-office/update-office.component';
+import { AddStaffComponent } from './components/add-staff/add-staff.component';
+import { RemoveStaffMemberComponent } from './components/edit-delete-pop-up/remove-staff-member/remove-staff-member.component';
+import { EditStaffMemberComponent } from './components/edit-delete-pop-up/edit-staff-member/edit-staff-member.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { UpdateOfficeComponent } from './components/update-office/update-office.
     OfficeViewComponent,
     EditDeleteOfficesPopUpComponent,
     RemoveOfficeComponent,
-    UpdateOfficeComponent
+    UpdateOfficeComponent,
+    AddStaffComponent,
+    RemoveStaffMemberComponent,
+    EditStaffMemberComponent,
+   
   ],
   imports: [
     BrowserModule,

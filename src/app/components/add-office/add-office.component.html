@@ -1,7 +1,12 @@
 <div class="add-office-container">
   <div class="add-office">
     <!-- <h1>add office</h1> -->
-    <h1>Add Office <span id="close" (click)="closePopUp()">X</span></h1>
+    <h1>
+      Add Office
+      <span id="close" (click)="closePopUp()"
+        ><img id="closeImage" src="../../../assets/images/close.png"
+      /></span>
+    </h1>
     <input placeholder="Office Name" [(ngModel)]="name" />
     <input placeholder="Email Address" [(ngModel)]="email" />
     <input placeholder="Office tell" [(ngModel)]="officeTell" />

@@ -4,21 +4,24 @@
     </div>
   </div> -->
 
-
-  <!-- <div class="remove-office-container" *ngIf="id">
+<!-- <div class="remove-office-container" *ngIf="id">
     <div class="remove-office">
       <button (click)="removeOffice(id)">remove</button>
     </div>
   </div> -->
 
-  
-  <div class="remove-office-container">
-    
-    <div class="remove-office">
-    
-        <h1>Remove Office</h1>
-        <h2>are you sure you want to <span>Remove</span></h2>
-        <h1>{{officeName}}</h1>
-      <button (click)="removeOffice()">remove</button>
-    </div>
+<div class="remove-office-container">
+  <div class="remove-office">
+    <h1>
+      Remove Office
+      <span
+        ><img 
+        (click)="closePop()"
+        id="closeImage" src="../../../assets/images/close.png"
+      /></span>
+    </h1>
+    <h2>are you sure you want to <span>Remove</span></h2>
+    <h1>{{ officeName }}</h1>
+    <button (click)="removeOffice()">remove</button>
   </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="remove-staff-member-container" *ngIf="selectedMember">
+  <div class="remove-staff-member">
+    <h1 id="title">Remove Staff <span> X</span></h1>
+
+    <h2>Are you sure you want to <span>Remove</span></h2>
+
+    <h1 id="name">
+      {{ selectedMember.name }} <span>{{ selectedMember.lastname }}</span>
+    </h1>
+    <button (click)="removeStaffMember()">Remove</button>
+  </div>
+</div>
+
+<!-- (ngSubmit)="addStaffMember(f)" -->
+<!-- (click)="closePop()" -->

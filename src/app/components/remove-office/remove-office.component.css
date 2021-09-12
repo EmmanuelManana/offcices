@@ -1,14 +1,28 @@
 .remove-office-container {
-    width: 80vh;
+    /* width: 80vh;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.281);
     position: absolute;
     top: 1%;
-    margin-left: -20px;
+    margin-left: -20px; */
+
+    position: fixed;
+    opacity: 1;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
   }
   
   .remove-office h2{
     padding: 20px;
+  }
+
+  #closeImage{
+    width: 30px;
+    margin-bottom: -5px;
   }
   
 

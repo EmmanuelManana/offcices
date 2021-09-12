@@ -23,6 +23,7 @@ export class AddOfficeComponent implements OnInit {
   constructor(private officeService: OfficeService) {}
 
   ngOnInit(): void {
+    console.log("test new office name: ", this.name)
     console.log("pop-up state: ", this.addNewOfficeParentState)
   }
 

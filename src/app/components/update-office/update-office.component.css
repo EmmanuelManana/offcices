@@ -6,6 +6,10 @@
     top: 1%;
     margin-left: -20px;;
   }
+
+  #back{
+    width: 30px;
+  }
   
   .add-office h1{
     display: flex;

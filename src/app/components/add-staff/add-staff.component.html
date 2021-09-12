@@ -1,0 +1,29 @@
+<div class="add-staff-container">
+  <div>
+    <form
+      class="add-staff"
+      #f="ngForm"
+      (ngSubmit)="addStaffMember(f)"
+      novalidate
+    >
+      <h1>
+        Add Staff<span
+          ><img
+            (click)="closePop()"
+            id="image"
+            src="../../../assets/images/close.png"
+        /></span>
+      </h1>
+
+      <input
+        name="first"
+        ngModel
+        required
+        #first="ngModel"
+        placeholder="Firstname"
+      />
+      <input name="last" ngModel placeholder="Lastname" />
+      <button>Submit</button>
+    </form>
+  </div>
+</div>

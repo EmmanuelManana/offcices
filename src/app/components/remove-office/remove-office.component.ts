@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output , EventEmitter} from '@angular/core';
 import { OfficeService } from 'src/app/services/office.service';
 
 @Component({
@@ -11,6 +11,9 @@ export class RemoveOfficeComponent implements OnInit {
   @Input() id?:string = '';
   @Input() removeOfficePopUpChild?: boolean = false;
   @Input() officeName?: string = '';
+
+  @Output() deleteOfficeClosePopUp = new  EventEmitter<boolean>();
+  @Output() updateParentClosePopUp = new  EventEmitter<boolean>();
   
   officeId: any;
 
@@ -22,6 +25,11 @@ export class RemoveOfficeComponent implements OnInit {
 
   removeOffice(): void {
     this.officeService.removeOffice(this.id);
+  }
+
+  closePop(){
+    this.deleteOfficeClosePopUp.emit(false)
+    this.updateParentClosePopUp.emit(false)
   }
 
 }

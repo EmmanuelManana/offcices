@@ -11,7 +11,7 @@
   <div class="offices" *ngFor="let office of offices | async">
     <div class="office-card">
       <div class="badge" routerLink="/officeview/{{ office.id }}">
-        <img src="http://simpleicon.com/wp-content/uploads/group-2.png" />
+        <img src="../../../assets/images/people.png" alt="people">
         <h2>
           <!-- TODO get daynamic occupants -->
           <span>{{ office.staffMembers.length }}/</span
@@ -48,7 +48,7 @@
 
     <app-edit-delete-offices-pop-up
       *ngIf="office == selectedOffice && PopUp == true"
-      (closePopUEmitter)="boxPopUp($event)"
+      (closePopUEmitter)="boxPopUp($event)" 
       [id]="selectedOffice.id"
       [officeName] = "selectedOffice.name"
     >

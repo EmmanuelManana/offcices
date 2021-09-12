@@ -14,6 +14,8 @@ export class EditDeleteOfficesPopUpComponent implements OnInit {
 
   removeOfficePopUp?: boolean = false;
   editOfficePopUp?: boolean = false;
+  @Output()   deleteOfficeClosePopUp = new EventEmitter<boolean>();
+
   popUp?: boolean = false;
 
   constructor() { }
@@ -23,20 +25,26 @@ export class EditDeleteOfficesPopUpComponent implements OnInit {
     console.log("removeOfficePopUp: ", this.removeOfficePopUp)
   }
 
-  closePop(){
-    console.log("Emmit")
-    // this.closePopUEmitter.emit(false)
+ 
+  editOffice(closePop: boolean): void{
+    this.editOfficePopUp = closePop;
+    this.popUp = true;
+    // if (closePop == true){
+    //   this.popUp = true;
+    // }else{
+    //   this.popUp = false;
+    // }
+   
   }
 
-  editOffice(): void{
-    this.editOfficePopUp = true;
-    // this.removeOfficePopUp = true;
+  removeOffice(removePopUp: boolean): void{
+    this.removeOfficePopUp = removePopUp;
     this.popUp = true;
   }
 
-  removeOffice(id: string): void{
-    this.removeOfficePopUp = true;
-    this.popUp = true;
+  // emmitts to offices
+  closePopUp(): void {
+    this. deleteOfficeClosePopUp.emit(false)
   }
 
 

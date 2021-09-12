@@ -1,0 +1,9 @@
+<div class="edit-staff-member-container">
+
+    <form class="edit-staff-member" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <h1>Edit Staff<span> X</span></h1>
+        <input name="first" ngModel required #first="ngModel" placeholder="Edit Name">
+        <input name="last" ngModel placeholder="Edit lastName">
+        <button>Submit</button>
+    </form>
+</div>

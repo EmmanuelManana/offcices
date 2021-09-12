@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { OfficeService } from 'src/app/services/office.service';
@@ -15,6 +15,9 @@ export class OfficeViewComponent implements OnInit {
   officeInView: {} = {};
   popUp?: boolean = false;
   selectedMember?: {};
+  id: string = 'hello';
+
+  addStaffPopUp?: boolean = false;
 
   constructor(
     private officeService: OfficeService,
@@ -24,9 +27,9 @@ export class OfficeViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getOFFiceByID(
-      this.activatedRoute.snapshot.paramMap.get('id') as string
-    );
+    this.id =  this.activatedRoute.snapshot.paramMap.get('id') as string;
+    this.getOFFiceByID(this.id);
+    console.log("offiview ID on init: ", this.id)
   }
 
   getOFFiceByID(id: string): void {
@@ -53,5 +56,12 @@ export class OfficeViewComponent implements OnInit {
 
   showPop(popUp: boolean): void {
     this.popUp = popUp;
+    console.log("addStaffPopUp: ", this.addStaffPopUp)
+  }
+
+  addStaff(addStuff: boolean): void{
+    console.log("add staff clicked: adn passed boolean is: ", addStuff)
+    this.addStaffPopUp = addStuff;
+    this.showPop(addStuff)
   }
 }

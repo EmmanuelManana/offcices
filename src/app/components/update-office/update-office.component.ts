@@ -20,6 +20,7 @@ export class UpdateOfficeComponent implements OnInit {
 
   @Input() addNewOfficeParentState?: boolean = false;
   @Output() addNewOfficeState = new EventEmitter<boolean>();
+  @Output() removeOffice = new EventEmitter<boolean>();
 
   @Input() id?:string = '';
 
@@ -45,7 +46,12 @@ export class UpdateOfficeComponent implements OnInit {
   }
 
   closePopUp():void{
+    console.log("emmit test")
     this.addNewOfficeState.emit(false)
-  } 
+  }
+
+  removeOfficePopUp(): void{
+    this.removeOffice.emit(false)
+  }
 
 }
