@@ -6,7 +6,6 @@ import { OfficeViewComponent } from './components/office-view/office-view.compon
 import { OfficesComponent } from './components/offices/offices.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: OfficesComponent },
   // I am being lazy here
   { path: 'officeview/:id', component: OfficeViewComponent },

@@ -28,6 +28,7 @@ import { UpdateOfficeComponent } from './components/update-office/update-office.
 import { AddStaffComponent } from './components/add-staff/add-staff.component';
 import { RemoveStaffMemberComponent } from './components/edit-delete-pop-up/remove-staff-member/remove-staff-member.component';
 import { EditStaffMemberComponent } from './components/edit-delete-pop-up/edit-staff-member/edit-staff-member.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { EditStaffMemberComponent } from './components/edit-delete-pop-up/edit-s
     AddStaffComponent,
     RemoveStaffMemberComponent,
     EditStaffMemberComponent,
+    SearchPipe,
    
   ],
   imports: [

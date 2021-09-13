@@ -48,7 +48,12 @@ export class OfficesComponent implements OnInit {
 
   onSelect(selectedOffice: Office): void {
     this.selectedOffice = selectedOffice;
-    this.PopUp = true;
+
+    if (this.PopUp == false) {
+      this.PopUp = true;
+    } else {
+      this.PopUp = false;
+    }
     this.setActionMenu(true);
   }
 

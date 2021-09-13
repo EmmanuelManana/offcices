@@ -16,7 +16,7 @@
   </header>
 
   <div class="search">
-    <input type="text" placeholder="  search..." />
+    <input type="text" placeholder="  search..." [(ngModel)]="filterString"/>
   </div>
 
   <div class="staff" *ngIf="officeInView">
@@ -28,9 +28,9 @@
     <button (click)="addStaff(true)">Add Staff</button>
   </div>
 
-  <div class="staffmembers" *ngIf="officeInView.staffMembers">
+  <div class="staffmembers" *ngIf="staffMembers.length >= 0">
     <div *ngIf="officeInView.staffMembers">
-      <div class="staff-cards" *ngFor="let member of officeInView.staffMembers">
+      <div class="staff-cards" *ngFor="let member of staffMembers | search:filterString">
         <div class="staff-card-right">
           <img
             src="https://cdn2.iconfinder.com/data/icons/colored-simple-circle-volume-01/128/circle-flat-general-51851bd79-512.png"
