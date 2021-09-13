@@ -22,6 +22,7 @@ export class RemoveStaffMemberComponent implements OnInit {
 
   ngOnInit(): void {
     this.closeParentPopUp.emit(false);
+
     // I am being lazy here, could have used ngrx
     this.id = this.activatedRoute.snapshot.paramMap.get('id') as string;
     console.log('member to remove', this.selectedMember);
@@ -37,5 +38,9 @@ export class RemoveStaffMemberComponent implements OnInit {
       this.selectedMember,
       this.id as string
     );
+  }
+
+  closePopUp():void{
+    this.closeParentPopUp.emit(false);
   }
 }

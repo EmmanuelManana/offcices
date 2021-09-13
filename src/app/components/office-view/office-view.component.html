@@ -37,7 +37,8 @@
           />
           <p>{{ member.name }} {{ member.lastname }}</p>
         </div>
-        <button *ngIf="popUp == false" (click)="onSelect(member)">...</button>
+        <button
+         *ngIf="popUp == false" (click)="onSelect(member)">...</button>
         <!-- emit -->
         <app-edit-delete-pop-up
           *ngIf="popUp == true && member == selectedMember"

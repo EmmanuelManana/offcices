@@ -6,11 +6,15 @@ import { OfficeViewComponent } from './components/office-view/office-view.compon
 import { OfficesComponent } from './components/offices/offices.component';
 
 const routes: Routes = [
-  { path: 'home', component: OfficesComponent },
-  // I am being lazy here
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', loadChildren: () => import('./components/offices/offices.module').then(m => m.OfficesModule) },
+  
+
+  // I am being lazy here, could have a store for stat management and some code splitting.
   { path: 'officeview/:id', component: OfficeViewComponent },
   { path: 'officeview/:id', component: AddStaffComponent },
   { path: 'officeview/:id', component: RemoveStaffMemberComponent },
+
 ];
 
 @NgModule({
