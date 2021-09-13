@@ -34,7 +34,7 @@ import { SearchPipe } from './pipes/search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    // OfficesComponent, // lazy loaded only this one.
+    OfficesComponent, // lazy loaded only this one.
     EditDeletePopUpComponent,
     AddOfficeComponent,
     OfficeViewComponent,

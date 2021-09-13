@@ -7,8 +7,8 @@ import { OfficesComponent } from './components/offices/offices.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./components/offices/offices.module').then(m => m.OfficesModule) },
-  
+  // { path: 'home', loadChildren: () => import('./components/offices/offices.module').then(m => m.OfficesModule) },
+  { path: 'home', component: OfficesComponent },
 
   // I am being lazy here, could have a store for stat management and some code splitting.
   { path: 'officeview/:id', component: OfficeViewComponent },
